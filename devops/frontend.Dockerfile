@@ -6,6 +6,8 @@ RUN npm install
 
 COPY ./tic-tac-toe .
 
+ARG VERSION
+RUN npm version ${VERSION}
 RUN npm run build
 
 
