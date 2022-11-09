@@ -18,7 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test-ci": "react-scripts test --ci --testResultsProcessor=jest-junit",
+    "test-ci": "react-scripts test --ci --testResultsProcessor=jest-junit --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
