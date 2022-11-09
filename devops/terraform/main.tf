@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "ttt_task" {
   [
     {
       "name": "ttt-task",
-      "image": "${aws_ecr_repository.ttt_repo.repository_url}:0.1.17",
+      "image": "${aws_ecr_repository.ttt_repo.repository_url}:latest",
       "essential": true,
       "portMappings": [
         {
