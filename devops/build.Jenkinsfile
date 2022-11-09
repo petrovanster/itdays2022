@@ -7,7 +7,12 @@ node('build') {
 
     stage('build') {
         dir('./frontend') {
+            sh "docker build --target build-t ttt-frontend-build:${version} --build-arg VERSION=${version} -f ../devops/frontend.Dockerfile ./"
             sh "docker build -t ttt-frontend:latest -t ttt-frontend:${version} --build-arg VERSION=${version} -f ../devops/frontend.Dockerfile ./"
         }
+    }
+
+    stage('tests') {
+        sh "docker run --rm ttt-frontend-build:${version} npm run test-ci"
     }
 }
