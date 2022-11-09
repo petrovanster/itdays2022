@@ -13,7 +13,7 @@ node('build') {
     }
 
     stage('tests') {
-        sh "docker run --rm -v ${PWD}/reports:/app/reports ttt-frontend-build:${version} npm run test-ci"
+        sh "docker run --rm -v ${WORKSPACE}/reports:/app/reports ttt-frontend-build:${version} npm run test-ci"
         junit "reports/junit.xml"
     }
 }
