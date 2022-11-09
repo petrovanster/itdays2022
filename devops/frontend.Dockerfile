@@ -8,6 +8,7 @@ COPY ./tic-tac-toe .
 
 ARG VERSION
 RUN npm version ${VERSION}
+RUN npm run test-ci
 RUN npm run build
 
 

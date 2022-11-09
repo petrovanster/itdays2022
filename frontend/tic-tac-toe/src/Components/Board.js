@@ -160,3 +160,4 @@ const Board = (props) => {
 }
 
 export default Board;
+export { computeGameState }
